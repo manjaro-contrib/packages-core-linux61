@@ -22,7 +22,6 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz"
         'config'
         # ARCH Patches
         '0101-ZEN_Add_sysctl_and_CONFIG_to_disallow_unprivileged_CLONE_NEWUSER.patch'
-        '0102-mm_vmscan_fix_extreme_overreclaim_and_swap_floods.patch'
         '0103-Bluetooth_fix_deadlock_for_RFCOMM_sk_state_change.patch'
         # MANJARO Patches
 
@@ -46,9 +45,8 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz"
 )
 
 sha256sums=('e52f5263b061488bb1f1a591124644f776f0886dec0d2201f1bc4c1bd78d1497'
-            'a4ecd521f7535ab72556a168600f1049452f406be3126b7a8906b51c5800b999'
+            'aaa6d2129c8b330b103119834f04023d870140ca89e07f3ec8b10223bed77a45'
             '05f04019d4a2ee072238c32860fa80d673687d84d78ef436ae9332b6fb788467'
-            'a75d2a2322c8cd99a6dc9945424fd9006e7a8f9d2793c0ae97ef931f2d54b9a5'
             'a8a2d8b402b2877df1a949a106c634b6c366dd33b954c4b735ce1d3778214169')
 
 prepare() {
