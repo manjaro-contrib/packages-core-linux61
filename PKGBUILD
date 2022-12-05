@@ -5,12 +5,12 @@
 # Thomas Baechler <thomas@archlinux.org>
 
 _basekernel=6.1
-_rc=rc7
+_rc=rc8
 _basever=${_basekernel//.}
 _kernelname=-MANJARO
 pkgbase=linux${_basever}
 pkgname=("$pkgbase" "$pkgbase-headers")
-pkgver=6.1.0rc7
+pkgver=6.1.0rc8
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -44,7 +44,7 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz"
 #        '0413-bootsplash.gitpatch'
 )
 
-sha256sums=('e52f5263b061488bb1f1a591124644f776f0886dec0d2201f1bc4c1bd78d1497'
+sha256sums=('61063135667b1e6177cf933cf12f08f2d8ce6a094d61616d0869466c3b6dc7ae'
             'aaa6d2129c8b330b103119834f04023d870140ca89e07f3ec8b10223bed77a45'
             '05f04019d4a2ee072238c32860fa80d673687d84d78ef436ae9332b6fb788467'
             'a8a2d8b402b2877df1a949a106c634b6c366dd33b954c4b735ce1d3778214169')
