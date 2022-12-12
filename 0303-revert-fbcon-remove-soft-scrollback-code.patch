@@ -451,7 +451,7 @@
 +
 +	offset = disp->yscroll - scrollback_current;
 +	limit = disp->vrows;
-+	switch (disp->scrollmode) {
++	/* switch (disp->scrollmode) {
 +	case SCROLL_WRAP_MOVE:
 +		info->var.vmode |= FB_VMODE_YWRAP;
 +		break;
@@ -460,7 +460,7 @@
 +		limit -= vc->vc_rows;
 +		info->var.vmode &= ~FB_VMODE_YWRAP;
 +		break;
-+	}
++	} */
 +	if (offset < 0)
 +		offset += limit;
 +	else if (offset >= limit)
