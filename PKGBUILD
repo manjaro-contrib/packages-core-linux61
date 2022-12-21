@@ -5,12 +5,11 @@
 # Thomas Baechler <thomas@archlinux.org>
 
 _basekernel=6.1
-_rc=
 _basever=${_basekernel//.}
 _kernelname=-MANJARO
 pkgbase=linux${_basever}
 pkgname=("$pkgbase" "$pkgbase-headers")
-pkgver=6.1.0
+pkgver=6.1.1
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -18,7 +17,7 @@ license=('GPL2')
 makedepends=(bc docbook-xsl libelf pahole git inetutils kmod xmlto cpio perl tar xz)
 options=('!strip')
 source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
-        #"https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz"
+        "https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz"
         'config'
         # ARCH Patches
         '0101-ZEN_Add_sysctl_and_CONFIG_to_disallow_unprivileged_CLONE_NEWUSER.patch'
@@ -45,7 +44,8 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
 )
 
 sha256sums=('6246ee76209fb1ff46ffcd67d0cc8029dec2ef929de32ef5460a7a5649583103'
-            '83db4bd06ef772855faa2ae03a130cf1cb8c16dcc2202d0c82531b8bf8f6bd11'
+            '8946cdb814a7876a37378129942531594ce5d656909a29585b10a35f2979b562'
+            'b6971386263d08a15722a314a4aafb93fec3b5525588475746dd7db5baf7800d'
             '05f04019d4a2ee072238c32860fa80d673687d84d78ef436ae9332b6fb788467'
             'a5a482a4d715f4d11a00f898de520effa01cce31faadd98b02cf10006a4ac8be'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
@@ -69,8 +69,8 @@ prepare() {
   cd "linux-${_basekernel}"
 
   # add upstream patch
-  #msg "add upstream patch"
-  #patch -p1 -i "../patch-${pkgver}"
+  msg "add upstream patch"
+  patch -p1 -i "../patch-${pkgver}"
 
   local src
   for src in "${source[@]}"; do
