@@ -9,7 +9,7 @@ _basever=${_basekernel//.}
 _kernelname=-MANJARO
 pkgbase=linux${_basever}
 pkgname=("$pkgbase" "$pkgbase-headers")
-pkgver=6.1.2
+pkgver=6.1.3
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -21,7 +21,7 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
         'config'
         # ARCH Patches
         '0101-ZEN_Add_sysctl_and_CONFIG_to_disallow_unprivileged_CLONE_NEWUSER.patch'
-        'https://github.com/archlinux/linux/commit/0c079d3f88df5f8286cd5c91b54bdac7c819be85.patch'
+        '0102-drmi915_Improve_the_catch_all-evict_to_handle_lock_contention.patch'
         # MANJARO Patches
 
         # Bootsplash
@@ -44,10 +44,10 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
 )
 
 sha256sums=('6246ee76209fb1ff46ffcd67d0cc8029dec2ef929de32ef5460a7a5649583103'
-            'b6d10528d99d50a985577858a7d7d89fde5c1b05607a38b38561e434d2c08c50'
-            'b6971386263d08a15722a314a4aafb93fec3b5525588475746dd7db5baf7800d'
-            '05f04019d4a2ee072238c32860fa80d673687d84d78ef436ae9332b6fb788467'
-            'a5a482a4d715f4d11a00f898de520effa01cce31faadd98b02cf10006a4ac8be'
+            '72645d2ce5bf9b373e89168bb8a4b92e6a3eddd8ac060de07e5f0e253f657d2f'
+            '751db3784cc8c75c79889163c6283245416ca7176d04187870b4c499d3931305'
+            'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
+            '431ac870eacba9719f3e241fd3bd80573c99bb51b821029fb7a2232e862d935e'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
             '94a8538251ad148f1025cc3de446ce64f73dc32b01815426fb159c722e8fa5bc'
             '50f4ccc4aeb0ffb8ec648b90a84ff188dbfed5364075cf0c6045c5696caf6ca9'
