@@ -10,7 +10,7 @@ _kernelname=-MANJARO
 pkgbase=linux${_basever}
 pkgname=("$pkgbase" "$pkgbase-headers")
 pkgver=6.1.4
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=('GPL2')
@@ -40,11 +40,14 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
         '0411-bootsplash.patch'
         '0412-bootsplash.patch'
         '0413-bootsplash.gitpatch'
+
+        # ACS_override patch
+        '0999-acs.gitpatch'
 )
 
 sha256sums=('6246ee76209fb1ff46ffcd67d0cc8029dec2ef929de32ef5460a7a5649583103'
             'e4e2cc9e92f177d3a2f729f826f7914b96de8652e660c049e00fc499d096b22f'
-            'beb1b72f8ec6d7e667257a1ff29b7bbee1cae359eafa2dfef88b88dca967a64c'
+            '858d1ebb0c6a8a543ae94fdaf5493f00708e0435c24067e10f59b94d956af462'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
             '94a8538251ad148f1025cc3de446ce64f73dc32b01815426fb159c722e8fa5bc'
@@ -61,7 +64,8 @@ sha256sums=('6246ee76209fb1ff46ffcd67d0cc8029dec2ef929de32ef5460a7a5649583103'
             'cf06d959a53eff6d3c287327f1cb2a68346d725cfd1370bc7482a0edc75692fc'
             '27471eee564ca3149dd271b0817719b5565a9594dc4d884fe3dc51a5f03832bc'
             'b6e695edbe349505a89c98054a54443acd90830a312cd035393c5c0a624e45c0'
-            '035ea4b2a7621054f4560471f45336b981538a40172d8f17285910d4e0e0b3ef')
+            '035ea4b2a7621054f4560471f45336b981538a40172d8f17285910d4e0e0b3ef'
+            '5f2d2c4ab326830df11d5bc985feab2988ee929bbf249f85453536e1998951bd')
 
 prepare() {
   cd "linux-${_basekernel}"
@@ -78,6 +82,9 @@ prepare() {
       msg2 "Applying patch: $src..."
       patch -Np1 < "../$src"
   done
+
+  msg2 "Applying 0999-acs.gitpatch"
+  patch --ignore-whitespace --fuzz 3 -p1 < "../0999-acs.gitpatch"
 
   msg2 "add config"
   cat "../config" > ./.config
