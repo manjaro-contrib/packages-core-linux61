@@ -21,12 +21,12 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
         'config'
         # ARCH Patches
         '0101-ZEN_Add_sysctl_and_CONFIG_to_disallow_unprivileged_CLONE_NEWUSER.patch'
-        'https://github.com/archlinux/linux/commit/1635d2bdd74f7ecea0a7cbbdd74f78b2f369a16e.patch'
-        'https://github.com/archlinux/linux/commit/ad3af346ebfb9b31d39ffeb57820617acf9902a8.patch'
-        'https://github.com/archlinux/linux/commit/688c752c92a868114d754da67a6d109dc1903e9a.patch'
-        'https://github.com/archlinux/linux/commit/50811dff5e09b96380a305d5e44de1f17d9cd7c0.patch'
-        'https://github.com/archlinux/linux/commit/40b9d0489f5ab85733605a5112f4f6bb22ec7c9e.patch'
-        'https://github.com/archlinux/linux/commit/cb872cf86fe3ade981c51530cf0422472a1c55fe.patch'
+        '0102-Revert-drmi915-improve_the_catch-all_evict_to_handle_lock_contention.patch'
+        '0103-drmi915-improve_the_catch-all_evict_to_handle_lock_contention.patch'
+        '0104-drm-amdgpu-display-mst-Fix_mst_state-pbn_div_and_slot_count_assignments.patch'
+        '0105-drm-amdgpu-display-mst-limit_payload_to_be_updated_one_by_one.patch'
+        '0106-drm-amdgpu-display-mst-update_mst_mgr_relevant_variable_when_long_HPD.patch'
+        '0107-drm-display-dp_mst-Correct_the_kref_of_port.patch'
         # MANJARO Patches
 
         # Bootsplash
@@ -53,7 +53,7 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
 
 sha256sums=('6246ee76209fb1ff46ffcd67d0cc8029dec2ef929de32ef5460a7a5649583103'
             'b66c64b8288bfdaa1ce8e9f06af53697e2f538698786c2b6bae79084d8c74323'
-            '13dce2ecd9d0dd7025fdbd3f7a78505365eee8f32a7aaae3cb949201c1f31655'
+            'c9819f28c426e2edf6bae2de8b529d5baaa2afb6c9572bcfeadbdadb4899657a'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
             '982806daa2c789a63cf685eef71a82754b0530852b7ba130cc9d4025dab79b2f'
             '0a32a567966d7c33035634c46d56073e8a6f66e4d9729b8b25d09579d00c3e7b'
