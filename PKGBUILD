@@ -49,7 +49,7 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
 
 sha256sums=('6246ee76209fb1ff46ffcd67d0cc8029dec2ef929de32ef5460a7a5649583103'
             'bf5e85ae99dcaad6560105582a282d32730bc2406fa52d3ef81847c486371bfb'
-            '41a10c5c62b2dc3d3b453b6b11457429d1ff36e8a7591afbc0ab3f55f9d58f31'
+            '2989ac2c4d583aae374ab78cf95f035d97b55afd8a68d73fc54179f4b0daf688'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
             '982806daa2c789a63cf685eef71a82754b0530852b7ba130cc9d4025dab79b2f'
             '0a32a567966d7c33035634c46d56073e8a6f66e4d9729b8b25d09579d00c3e7b'
