@@ -25,7 +25,7 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
         '0103-drmi915-improve_the_catch-all_evict_to_handle_lock_contention.patch'
         # MANJARO Patches
         '0999-patch_realtek.patch'
-        revert-wifi-cfg80211-fix-cqm-for-non-range-use.patch
+        'wifi-nl80211-fix-deadlock-in-nl80211_set_cqm_rssi-(6.6.x).patch'
         # Bootsplash
         '0301-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'
         '0302-revert-fbcon-remove-no-op-fbcon_set_origin.patch'
@@ -54,7 +54,7 @@ sha256sums=('6246ee76209fb1ff46ffcd67d0cc8029dec2ef929de32ef5460a7a5649583103'
             '982806daa2c789a63cf685eef71a82754b0530852b7ba130cc9d4025dab79b2f'
             '0a32a567966d7c33035634c46d56073e8a6f66e4d9729b8b25d09579d00c3e7b'
             '3aa9f1ca47bb078f3c9a52fe61897cf4fe989068cd7e66bfa6644fd605fa40d2'
-            '33450069abc0b8e9057281d86ef8dc35a7ba1732751be9f6e3f6c01d23670a71'
+            '4e4477ca4d7a434a48ed84bb4f223e2ad5ea739ba929804f0e502c948c9ef343'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
             '94a8538251ad148f1025cc3de446ce64f73dc32b01815426fb159c722e8fa5bc'
             '50f4ccc4aeb0ffb8ec648b90a84ff188dbfed5364075cf0c6045c5696caf6ca9'
