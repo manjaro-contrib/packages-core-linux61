@@ -9,7 +9,7 @@ _basever=${_basekernel//.}
 _kernelname=-MANJARO
 pkgbase=linux${_basever}
 pkgname=("$pkgbase" "$pkgbase-headers")
-pkgver=6.1.74
+pkgver=6.1.75
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -47,12 +47,12 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
 )
 
 sha256sums=('6246ee76209fb1ff46ffcd67d0cc8029dec2ef929de32ef5460a7a5649583103'
-            '069a69da44066f4faf32899ed9bc490489587d24297477b24b74286a1eb3f88e'
+            '5c75fae57ee7a39549b2d642e052c0091de6b1668a845c86e3a69ddf1076c353'
             '4c029370498c6942e1f61f42f366abd357a8c695d827159fb190b9fae4076b0b'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
             '982806daa2c789a63cf685eef71a82754b0530852b7ba130cc9d4025dab79b2f'
             '0a32a567966d7c33035634c46d56073e8a6f66e4d9729b8b25d09579d00c3e7b'
-            '3aa9f1ca47bb078f3c9a52fe61897cf4fe989068cd7e66bfa6644fd605fa40d2'
+            'a99b684fe5bc7fdacc6f5b1f2b6593672fc5d1e676c4de03ec29723747fc574b'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
             '94a8538251ad148f1025cc3de446ce64f73dc32b01815426fb159c722e8fa5bc'
             '50f4ccc4aeb0ffb8ec648b90a84ff188dbfed5364075cf0c6045c5696caf6ca9'
@@ -148,13 +148,6 @@ package_linux61() {
   local _extramodules="extramodules-${_basekernel}${_kernelname:--MANJARO}"
   ln -s "../${_extramodules}" "${pkgdir}/usr/lib/modules/${_kernver}/extramodules"
 
-  # add real version for building modules and running depmod from hook
-  echo "${_kernver}" |
-    install -Dm644 /dev/stdin "${pkgdir}/usr/lib/modules/${_extramodules}/version"
-
-  # remove build and source links
-  rm "${pkgdir}"/usr/lib/modules/${_kernver}/{source,build}
-
   # now we call depmod...
   depmod -b "${pkgdir}/usr" -F System.map "${_kernver}"
 }
@@ -166,6 +159,10 @@ package_linux61-headers() {
 
   cd "linux-${_basekernel}"
   local _builddir="${pkgdir}/usr/lib/modules/${_kernver}/build"
+
+  # add real version for building modules and running depmod from hook
+  echo "${_kernver}" |
+    install -Dm644 /dev/stdin "${_builddir}/version"
 
   install -Dt "${_builddir}" -m644 Makefile .config Module.symvers
   install -Dt "${_builddir}/kernel" -m644 kernel/Makefile
@@ -231,6 +228,10 @@ package_linux61-headers() {
     esac
   done < <(find "${_builddir}" -type f -perm -u+x ! -name vmlinux -print0 2>/dev/null)
   strip $STRIP_STATIC "${_builddir}/vmlinux"
+
+  echo "Adding symlink..."
+  mkdir -p "${pkgdir}/usr/src"
+  ln -sr "${_builddir}" "${pkgdir}/usr/src/${pkgbase}"
 
   # remove unwanted files
   find ${_builddir} -name '*.orig' -delete
