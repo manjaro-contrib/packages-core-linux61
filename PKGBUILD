@@ -144,10 +144,6 @@ package_linux61() {
   # add kernel version
   echo "${pkgver}-${pkgrel}-MANJARO x64" > "${pkgdir}/boot/${pkgbase}-${CARCH}.kver"
 
-  # make room for external modules
-  local _extramodules="extramodules-${_basekernel}${_kernelname:--MANJARO}"
-  ln -s "../${_extramodules}" "${pkgdir}/usr/lib/modules/${_kernver}/extramodules"
-
   # now we call depmod...
   depmod -b "${pkgdir}/usr" -F System.map "${_kernver}"
 }
