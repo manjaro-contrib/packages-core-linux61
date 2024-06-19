@@ -24,7 +24,6 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
         '0102-Revert-drmi915-improve_the_catch-all_evict_to_handle_lock_contention.patch'
         '0103-drmi915-improve_the_catch-all_evict_to_handle_lock_contention.patch'
         # MANJARO Patches
-        '0001-amd-fix-shutdown-reboot.patch::https://lore.kernel.org/amd-gfx/20240526125908.2742-1-mario.limonciello@amd.com/raw'
         '0999-patch_realtek.patch'
         # Bootsplash
         '0301-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'
@@ -53,7 +52,6 @@ sha256sums=('6246ee76209fb1ff46ffcd67d0cc8029dec2ef929de32ef5460a7a5649583103'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
             '982806daa2c789a63cf685eef71a82754b0530852b7ba130cc9d4025dab79b2f'
             '0a32a567966d7c33035634c46d56073e8a6f66e4d9729b8b25d09579d00c3e7b'
-            '0c02dda000e0ec3b4f3dd65b00adf365931b04ad5ed9fe590ff7a3f77dfa992c'
             'a99b684fe5bc7fdacc6f5b1f2b6593672fc5d1e676c4de03ec29723747fc574b'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
             '94a8538251ad148f1025cc3de446ce64f73dc32b01815426fb159c722e8fa5bc'
