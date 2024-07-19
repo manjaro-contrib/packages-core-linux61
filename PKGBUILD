@@ -9,7 +9,7 @@ _basever=${_basekernel//.}
 _kernelname=-MANJARO
 pkgbase=linux${_basever}
 pkgname=("$pkgbase" "$pkgbase-headers")
-pkgver=6.1.99
+pkgver=6.1.100
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -47,7 +47,7 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
 )
 
 sha256sums=('6246ee76209fb1ff46ffcd67d0cc8029dec2ef929de32ef5460a7a5649583103'
-            '06fe6378e766b7513d0c2c7575b03daf125f7e844cf9905e2373b067c0ee0ec4'
+            '6b901fd4fb2d20d305f982bc6feb5f1f92c6161752c15bb808c4ef080b173a95'
             '5a5565754605f4e0b6466bf99de668dfd531e09d8ea5a97a704efd8799c56f8b'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
             '982806daa2c789a63cf685eef71a82754b0530852b7ba130cc9d4025dab79b2f'
