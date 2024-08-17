@@ -148,7 +148,7 @@ package_linux61() {
   rm "${pkgdir}"/usr/lib/modules/${_kernver}/{source,build}
 
   # now we call depmod...
-  depmod -b "${pkgdir}/usr" -F System.map "${_kernver}"
+  depmod -b "${pkgdir}" -F System.map "${_kernver}"
 }
 
 package_linux61-headers() {
