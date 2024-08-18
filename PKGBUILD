@@ -16,7 +16,7 @@ url="https://www.kernel.org/"
 license=('GPL2')
 makedepends=(bc docbook-xsl libelf pahole python-sphinx git inetutils kmod xmlto cpio perl tar xz)
 options=('!strip')
-source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
+source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.xz"
         "https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz"
         'config'
         # ARCH Patches
@@ -46,7 +46,7 @@ source=("https://git.kernel.org/torvalds/t/linux-${_basekernel}.tar.gz"
         '0999-acs.gitpatch'
 )
 
-sha256sums=('6246ee76209fb1ff46ffcd67d0cc8029dec2ef929de32ef5460a7a5649583103'
+sha256sums=('2ca1f17051a430f6fed1196e4952717507171acfd97d96577212502703b25deb'
             'd5fedc964b79c41757339047d4172b757ca414da73f5651eb2180113e8e269f9'
             'e9e49421232af0ea95f4f18391da351e8cd3397583f2c5029c8c9f776bcb70cf'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
