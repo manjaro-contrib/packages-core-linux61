@@ -23,8 +23,6 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         '0101-ZEN_Add_sysctl_and_CONFIG_to_disallow_unprivileged_CLONE_NEWUSER.patch'
         '0102-Revert-drmi915-improve_the_catch-all_evict_to_handle_lock_contention.patch'
         '0103-drmi915-improve_the_catch-all_evict_to_handle_lock_contention.patch'
-        # https://gitlab.freedesktop.org/drm/amd/-/issues/3831
-        0001-amdgpu-uvd-get-ring-reference-from-rq-scheduler.patch::https://github.com/torvalds/linux/commit/47f402a3e08113e0f5d8e1e6fcc197667a16022f.patch
         # MANJARO Patches
         '0999-patch_realtek.patch'
         # Bootsplash
@@ -50,11 +48,10 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
 
 sha256sums=('2ca1f17051a430f6fed1196e4952717507171acfd97d96577212502703b25deb'
             '89d9f61c58f7983ac278546fda93607ea3eb33977a113d8718fba015d265e540'
-            'b759e29fe118a86d30484d37ac3181569ccdc8029cbc44fd6ce88d8aac524494'
+            '11e778cdde66ceb60e8b94d0fb0a339a3a2ae8826513b963e905346ec3e57474'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
             '982806daa2c789a63cf685eef71a82754b0530852b7ba130cc9d4025dab79b2f'
             '0a32a567966d7c33035634c46d56073e8a6f66e4d9729b8b25d09579d00c3e7b'
-            '861fe92258827ccd1501dcf969e168408e97cfc64ee16f3abd0ba504ade353b3'
             'b88d42565ce771cb6c8f98b7c05aada6b8024578a1985e5772dc5a2d07facee0'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
             '94a8538251ad148f1025cc3de446ce64f73dc32b01815426fb159c722e8fa5bc'
