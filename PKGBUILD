@@ -19,6 +19,10 @@ options=('!strip')
 source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.xz"
         "https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz"
         'config'
+        # Mailing list
+        # https://lore.kernel.org/all/fb4cce81-1e36-4887-a1e0-0cfd1a26693e@googlemail.com/
+        'linux-6.1.135-nonstring.patch'
+        'linux-6.1.135-gnu11.patch'
         # ARCH Patches
         '0101-ZEN_Add_sysctl_and_CONFIG_to_disallow_unprivileged_CLONE_NEWUSER.patch'
         '0102-Revert-drmi915-improve_the_catch-all_evict_to_handle_lock_contention.patch'
@@ -49,6 +53,8 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
 sha256sums=('2ca1f17051a430f6fed1196e4952717507171acfd97d96577212502703b25deb'
             '55784c83f1d88d3467460217ec4b459e603a39a3f25b0a165f70063cefd26e86'
             'c904b557bcb85a10950e78a10c135a86b5f92bcadf4c37df29972a9dcf1d1a06'
+            '40dd47dce0247ac5ec10a150d74239b0ec7b27d0c75c1bf95f4428ccd533e37b'
+            'b2b682c665b4e5f23b4d32fa2e7ce61d9b556e89bd0b955de97e26ce318ab521'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
             '982806daa2c789a63cf685eef71a82754b0530852b7ba130cc9d4025dab79b2f'
             '0a32a567966d7c33035634c46d56073e8a6f66e4d9729b8b25d09579d00c3e7b'
@@ -114,11 +120,6 @@ prepare() {
 
 build() {
   cd "linux-${_basekernel}"
-
-  # try to fix GCC15
-  # https://lore.kernel.org/stable/e7198e45-f7bf-4864-aed7-dd4ecfd13112@manjaro.org/T/#u
-  # https://lore.kernel.org/all/fb4cce81-1e36-4887-a1e0-0cfd1a26693e@googlemail.com/
-  export CFLAGS="${CFLAGS} -std=gnu11"
 
   msg "build"
   make ${MAKEFLAGS} LOCALVERSION= bzImage modules

@@ -1,0 +1,18 @@
+Commit 9d7a0577c9db35c4cc52db90bc415ea2484464720 gcc-15: disable '-Wunterminated-string-initialization' entirely for now
+fixed a build failure when compiling with GCC 15. Part of that change is required for linux-5.1.135.
+
+Signed-off-by: Chris Clayton <chris2553@googlemail.com>
+Link: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9d7a0577c9db35c4cc52db90bc415ea248446472
+
+--- linux-6.1.135/Makefile.orig	2025-04-28 08:30:27.038625979 +0100
++++ linux-6.1.135/Makefile	2025-04-28 08:32:45.670270839 +0100
+@@ -1055,6 +1055,9 @@ endif
+ KBUILD_CFLAGS-$(call gcc-min-version, 90100) += -Wno-alloc-size-larger-than
+ KBUILD_CFLAGS += $(KBUILD_CFLAGS-y) $(CONFIG_CC_IMPLICIT_FALLTHROUGH)
+ 
++#Currently, disable -Wunterminated-string-initialization as broken
++KBUILD_CFLAGS += $(call cc-option, -Wno-unterminated-string-initialization)
++
+ # disable invalid "can't wrap" optimizations for signed / pointers
+ KBUILD_CFLAGS	+= -fno-strict-overflow
+ 
