@@ -115,6 +115,11 @@ prepare() {
 build() {
   cd "linux-${_basekernel}"
 
+  # try to fix GCC15
+  # https://lore.kernel.org/stable/e7198e45-f7bf-4864-aed7-dd4ecfd13112@manjaro.org/T/#u
+  # https://lore.kernel.org/all/fb4cce81-1e36-4887-a1e0-0cfd1a26693e@googlemail.com/
+  export CFLAGS="${CFLAGS} -std=gnu11"
+
   msg "build"
   make ${MAKEFLAGS} LOCALVERSION= bzImage modules
 }
