@@ -22,7 +22,6 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         # Mailing list
         # https://lore.kernel.org/all/fb4cce81-1e36-4887-a1e0-0cfd1a26693e@googlemail.com/
         'linux-6.1.135-nonstring.patch'
-        'linux-6.1.135-gnu11.patch'
         # ARCH Patches
         '0101-ZEN_Add_sysctl_and_CONFIG_to_disallow_unprivileged_CLONE_NEWUSER.patch'
         '0102-Revert-drmi915-improve_the_catch-all_evict_to_handle_lock_contention.patch'
@@ -37,7 +36,6 @@ sha256sums=('2ca1f17051a430f6fed1196e4952717507171acfd97d96577212502703b25deb'
             'a28cab2259ef9f716768ecc40ad9ac9fa95a491dbbd835788cc482ac91fe08a8'
             'c3fbd760f6e76100916134b460bec00972615a66f26ce471ef0be6fbf84cbedc'
             '40dd47dce0247ac5ec10a150d74239b0ec7b27d0c75c1bf95f4428ccd533e37b'
-            'b2b682c665b4e5f23b4d32fa2e7ce61d9b556e89bd0b955de97e26ce318ab521'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
             '982806daa2c789a63cf685eef71a82754b0530852b7ba130cc9d4025dab79b2f'
             '0a32a567966d7c33035634c46d56073e8a6f66e4d9729b8b25d09579d00c3e7b'
