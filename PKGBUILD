@@ -10,7 +10,7 @@ _kernelname=-MANJARO
 pkgbase=linux${_basever}
 pkgname=("$pkgbase" "$pkgbase-headers")
 pkgver=6.1.149
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=('GPL2')
@@ -20,6 +20,8 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         "https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz"
         'config'
         # Mailing list
+        # https://lore.kernel.org/stable/aLH1M-F001Nfzs7m@eldamar.lan/
+        https://github.com/torvalds/linux/commit/5189446.patch
         # https://lore.kernel.org/all/fb4cce81-1e36-4887-a1e0-0cfd1a26693e@googlemail.com/
         'linux-6.1.135-nonstring.patch'
         # ARCH Patches
@@ -35,6 +37,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
 sha256sums=('2ca1f17051a430f6fed1196e4952717507171acfd97d96577212502703b25deb'
             'f2e3db056cc5ca98500257a19bcd1503eaa99c1c700ee595e8fd22e4caab35bd'
             '6955d83ab6060ed7dc4891e3e855081ee86aabbd034d167c1dabac8b16fb4780'
+            '228dda1824d78064e23c4a09a8b07dbcfcff838383e80f00e70702cbdf176fe2'
             '40dd47dce0247ac5ec10a150d74239b0ec7b27d0c75c1bf95f4428ccd533e37b'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
             '982806daa2c789a63cf685eef71a82754b0530852b7ba130cc9d4025dab79b2f'
