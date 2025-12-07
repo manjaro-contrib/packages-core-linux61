@@ -9,8 +9,8 @@ _basever=${_basekernel//.}
 _kernelname=-MANJARO
 pkgbase=linux${_basever}
 pkgname=("$pkgbase" "$pkgbase-headers")
-pkgver=6.1.158
-pkgrel=2
+pkgver=6.1.159
+pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=('GPL2')
@@ -33,7 +33,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
 )
 
 sha256sums=('2ca1f17051a430f6fed1196e4952717507171acfd97d96577212502703b25deb'
-            'aab050eb8e145eb9096e7510271b159d70c658f6891334643849ffac03025212'
+            'a917aa5c006610d02d9b7ac801b83463fa02052b3403f784be3158e5aa0018ac'
             '6bac2fc7291933f84d6b129c9194c93aa2d10717b80d301d29a68ee526ac4588'
             '40dd47dce0247ac5ec10a150d74239b0ec7b27d0c75c1bf95f4428ccd533e37b'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
