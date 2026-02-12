@@ -22,6 +22,8 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         # Mailing list
         # https://lore.kernel.org/all/fb4cce81-1e36-4887-a1e0-0cfd1a26693e@googlemail.com/
         'linux-6.1.135-nonstring.patch'
+        # Upstream
+        '0000-libbpf-Fix-Wdiscarded-qualifiers-under-C23.patch'
         # ARCH Patches
         '0101-ZEN_Add_sysctl_and_CONFIG_to_disallow_unprivileged_CLONE_NEWUSER.patch'
         '0102-Revert-drmi915-improve_the_catch-all_evict_to_handle_lock_contention.patch'
@@ -36,6 +38,7 @@ sha256sums=('2ca1f17051a430f6fed1196e4952717507171acfd97d96577212502703b25deb'
             'fe4c07076ff7614fdc75c42fb50c9a0a6f7e817df8c95671016a05e02b3cd89c'
             '90edb7e4c682a827eed671f839228e37308d9a32b3a57884bd698a7dbebd1348'
             '40dd47dce0247ac5ec10a150d74239b0ec7b27d0c75c1bf95f4428ccd533e37b'
+            'c1a262ca53fde7d8cd3b7c7479d6c908c73a9996c88e94afed5b71130c9bc788'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
             '982806daa2c789a63cf685eef71a82754b0530852b7ba130cc9d4025dab79b2f'
             '0a32a567966d7c33035634c46d56073e8a6f66e4d9729b8b25d09579d00c3e7b'
