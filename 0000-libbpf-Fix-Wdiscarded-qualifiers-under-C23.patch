@@ -12,13 +12,14 @@ glibc ≥ 2.42 (GCC 15) defaults to -std=gnu23, which promotes
 In C23, strstr() and strchr() return "const char *".
 
 Change variable types to const char * where the pointers are never
-modified (res, sym_sfx, next_path).
+modified (next_path).
 
 Suggested-by: Florian Weimer <fweimer@redhat.com>
 Suggested-by: Andrii Nakryiko <andrii@kernel.org>
 Signed-off-by: Mikhail Gavrilov <mikhail.v.gavrilov@gmail.com>
 Link: https://lore.kernel.org/r/20251206092825.1471385-1-mikhail.v.gavrilov@gmail.com
 Signed-off-by: Alexei Starovoitov <ast@kernel.org>
+Modified-by: Phil Mueller
 ---
  tools/lib/bpf/libbpf.c | 7 ++++---
  1 file changed, 4 insertions(+), 3 deletions(-)
@@ -27,25 +28,6 @@ diff --git a/tools/lib/bpf/libbpf.c b/tools/lib/bpf/libbpf.c
 index 3dc8a807881551..f4dfd23148a55f 100644
 --- a/tools/lib/bpf/libbpf.c
 +++ b/tools/lib/bpf/libbpf.c
-@@ -8484,7 +8484,7 @@ static int kallsyms_cb(unsigned long long sym_addr, char sym_type,
- 	struct bpf_object *obj = ctx;
- 	const struct btf_type *t;
- 	struct extern_desc *ext;
--	char *res;
-+	const char *res;
- 
- 	res = strstr(sym_name, ".llvm.");
- 	if (sym_type == 'd' && res)
-@@ -11818,7 +11818,8 @@ static int avail_kallsyms_cb(unsigned long long sym_addr, char sym_type,
- 		 *
- 		 *   [0] fb6a421fb615 ("kallsyms: Match symbols exactly with CONFIG_LTO_CLANG")
- 		 */
--		char sym_trim[256], *psym_trim = sym_trim, *sym_sfx;
-+		char sym_trim[256], *psym_trim = sym_trim;
-+		const char *sym_sfx;
- 
- 		if (!(sym_sfx = strstr(sym_name, ".llvm.")))
- 			return 0;
 @@ -12401,7 +12402,7 @@ static int resolve_full_path(const char *file, char *result, size_t result_sz)
  		if (!search_paths[i])
  			continue;
