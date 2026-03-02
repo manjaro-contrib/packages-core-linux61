@@ -6,8 +6,10 @@ nvidia-390xx
 nvidia-470xx
 nvidia-570xx
 nvidia-575xx
+nvidia-580xx
 nvidia-570xx-open
 nvidia-575xx-open
+nvidia-580xx-open
 nvidia-open
 r8168
 rtl8723bu
