@@ -36,7 +36,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
 
 sha256sums=('2ca1f17051a430f6fed1196e4952717507171acfd97d96577212502703b25deb'
             '9ebcf59a966cb1ed06b63a47c753716c691365e1e1ba18d3d823b00ac8ca4bbd'
-            'c735cad29e2aafde03fd1ea4750154f8384de24bb47fd87db621754629adadf9'
+            '573a585f07fb0ee6e0ae2ca5967c27d9f0357fee1dba77c56759233c1bba9745'
             '40dd47dce0247ac5ec10a150d74239b0ec7b27d0c75c1bf95f4428ccd533e37b'
             'e79c8f35a84051b37cc4900f545963d601335758884107e0bec71fead249396b'
             'de35604b1337f3d7cd7ce8dc02a741bfdde05709f22f4dfd29d065b20b517e4c'
