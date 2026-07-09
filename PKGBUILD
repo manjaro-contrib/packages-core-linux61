@@ -1,8 +1,6 @@
-# Maintainer: Bernhard Landauer <bernhard@manjaro.org>
 # Maintainer: Philip Müller <philm[at]manjaro[dot]org>
-# Archlinux maintainers:
-# Tobias Powalowski <tpowa@archlinux.org>
-# Thomas Baechler <thomas@archlinux.org>
+# Contributor: Bernhard Landauer <bernhard@manjaro.org>
+# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 _basekernel=6.1
 _basever=${_basekernel//.}
@@ -13,9 +11,26 @@ pkgver=6.1.177
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
-license=('GPL2')
-makedepends=(bc docbook-xsl libelf pahole python-sphinx git inetutils kmod xmlto cpio perl tar xz)
-options=('!strip')
+license=(GPL-2.0-only)
+makedepends=(
+  bc
+  docbook-xsl
+  git
+  inetutils
+  kmod
+  libelf
+  cpio
+  pahole
+  perl
+  python-sphinx
+  tar
+  xmlto
+  xz
+)
+options=(
+  !debug
+  !strip
+)
 source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.xz"
         "https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz"
         'config'
@@ -101,11 +116,21 @@ package_linux61() {
     'kmod'
   )
   optdepends=(
+    'linux-headers: headers and scripts for building modules'
     'linux-firmware: firmware images needed for some devices'
     'scx-scheds: to use sched-ext schedulers'
     'wireless-regdb: to set the correct wireless channels of your country'
   )
-  provides=("linux=${pkgver}" VIRTUALBOX-GUEST-MODULES WIREGUARD-MODULE KSMBD-MODULE)
+  provides=(
+    "linux=${pkgver}"
+    KSMBD-MODULE
+    VIRTUALBOX-GUEST-MODULES
+    WIREGUARD-MODULE
+  )
+  replaces=(
+    virtualbox-guest-modules
+    wireguard
+  )
 
   cd "linux-${_basekernel}"
 
@@ -135,8 +160,13 @@ package_linux61() {
 
 package_linux61-headers() {
   pkgdesc="Header files and scripts for building modules for ${pkgbase/linux/Linux} kernel"
-  depends=('gawk' 'python' 'libelf' 'pahole')
-  provides=("linux-headers=$pkgver")
+  depends=(
+    gawk
+    libelf
+    pahole
+    python
+  )
+  provides=('LINUX-HEADERS' "linux-headers=$pkgver")
 
   cd "linux-${_basekernel}"
   local _builddir="${pkgdir}/usr/lib/modules/${_kernver}/build"
