@@ -31,8 +31,8 @@ options=(
   !debug
   !strip
 )
-source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.xz"
-        "https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz"
+source=("https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.xz"
+        "https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz"
         'config'
         # Mailing list
         # https://lore.kernel.org/all/fb4cce81-1e36-4887-a1e0-0cfd1a26693e@googlemail.com/
